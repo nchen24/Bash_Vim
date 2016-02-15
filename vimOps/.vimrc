@@ -46,9 +46,8 @@ match OverLength /\%81v.\+/
 command Wmake :exec ":w | :make"
 
 "Set color scheme
-colorscheme myDefault
-
-"ctrl-V
-"LINE#gg
-"I
-"What you want to insert
+if has("gui_running")
+  colorscheme myDefault
+else 
+  colorscheme torte
+endif
