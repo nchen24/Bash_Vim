@@ -53,9 +53,3 @@ if has("gui_running")
 else 
   colorscheme torte
 endif
-
-
-"ctrl-V
-"LINE#gg
-"I
-"What you want to insert
