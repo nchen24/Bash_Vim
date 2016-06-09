@@ -33,20 +33,27 @@ set mat=2
 "Setup :make to run ./compile if it's c/c++
 autocmd FileType c,cpp setlocal makeprg=./compile
 
+"Highlight searched words
+set hlsearch
 
 "Paste from system clipboard with Ctrl-P
 nmap <silent> <c-P> "+p
 
 "Text highlighting for > 80 lines
-set textwidth=80
-set tw=80
-set wrap
+"set textwidth=80
+"set tw=80
+"set wrap
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 command Wmake :exec ":w | :make"
 
 "Set color scheme
-colorscheme myDefault
+if has("gui_running")
+  colorscheme myDefault
+else 
+  colorscheme torte
+endif
+
 
 "ctrl-V
 "LINE#gg
